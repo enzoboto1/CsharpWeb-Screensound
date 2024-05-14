@@ -1,5 +1,17 @@
-﻿using ScreenSound.Menus;
+﻿using ScreenSound.Banco;
+using ScreenSound.Menus;
 using ScreenSound.Modelos;
+
+try
+{
+    using var connection = new Connection().ObterConexao();
+    connection.Open();
+    Console.WriteLine(connection.State);
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
 
 Artista ira = new Artista("Ira!", "Banda Ira!");
 Artista beatles = new("The Beatles", "Banda The Beatles");
